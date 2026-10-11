@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpendWise - Interactive Budget Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header>
+            <h1>SpendWise 💰</h1>
+            <p>Smart Personal Budget Tracker</p>
+        </header>
+
+        <!-- Requirement 4: Dashboard Dynamic Update Elements -->
+        <section class="dashboard">
+            <div class="metric-card">
+                <h3>Total Budget</h3>
+                <p id="budget-display">$1,000.00</p>
+            </div>
+            <div class="metric-card">
+                <h3>Total Spent</h3>
+                <p id="spent-display">$0.00</p>
+            </div>
+            <div class="metric-card">
+                <h3>Remaining Balance</h3>
+                <p id="balance-display">$1,000.00</p>
+            </div>
+        </section>
+
+        <!-- Requirement 1: Conditional Feedback Alert Box -->
+        <div id="feedback-alert" class="alert hidden"></div>
+
+        <!-- Requirement 5: User Interaction Form -->
+        <section class="form-section">
+            <h2>Add New Expense</h2>
+            <form id="expense-form">
+                <div class="input-group">
+                    <label for="expense-name">Expense Description</label>
+                    <input type="text" id="expense-name" placeholder="e.g., Groceries" required>
+                </div>
+                <div class="input-group">
+                    <label for="expense-amount">Amount ($)</label>
+                    <input type="number" id="expense-amount" step="0.01" min="0.01" placeholder="e.g., 50.00" required>
+                </div>
+                <div class="input-group">
+                    <label for="expense-category">Category</label>
+                    <select id="expense-category" required>
+                        <option value="Food">Food</option>
+                        <option value="Housing">Housing</option>
+                        <option value="Entertainment">Entertainment</option>
+                        <option value="Utilities">Utilities</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <button type="submit" id="submit-btn">Add Expense Record</button>
+            </form>
+        </section>
+
+        <!-- Requirement 3 & 4: Processed Records List -->
+        <section class="records-section">
+            <h2>Recorded Expenses</h2>
+            <ul id="records-list">
+                <!-- Dynamically populated via script.js loops -->
+                <li class="empty-state">No expense records found.</li>
+            </ul>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
